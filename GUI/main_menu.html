@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Main Menu</title>
+    <!--<link href="jquery-ui-1.11.0/jquery-ui.css" rel="stylesheet">
+    <script src="jquery-ui-1.11.0/jquery-2.1.1.js"></script>
+    <script src="jquery-ui-1.11.0/jquery-ui.js"></script>-->
+    <link href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+     <script>
+    //$(function() {
+    //    $( "input[type=submit], a, button" )
+    //    .button()
+    //    .click(function( event ) {
+    //        event.preventDefault();
+    //    });
+    //});
+    $(function() {
+        $( "#join_game_dialog" ).dialog({
+            autoOpen: false,
+             buttons: {
+"Connect": function() {
+$( this ).dialog( "close" );
+},
+Cancel: function() {
+$( this ).dialog( "close" );
+}
+},
+            show: {
+                effect: "fold",
+                duration: 500
+                },
+                hide: {
+                effect: "fold",
+                duration: 500
+            }
+        });
+        $( "#open_join_server" ).click(function() {
+            $( "#join_game_dialog" ).dialog( "open");
+        });
+    });
+    $(function() {
+        $("#connect_button").val("Connect");
+    });
+    </script>
+</head>
+<body>
+
+
+    <div id="join_game_dialog" title="Join Standalone Server">
+        <form>
+            Server IP or Domain: <input type="text" name="server"><br />
+            Port: <input type="text" name="port"><br />
+            Password (Not Functional Yet): <input type="text" name="server">
+        </form>
+        <!--<input id="connect_button" type="submit">-->
+        <!--<button onclick="send_join_game()">OK</button>
+        <button onclick="clear_join_game()">Cancel</button>-->
+    </div>
+
+    Main Menu:
+     <!--<button onclick="join_lobby()">Join Lobby</button>-->
+     <button id="open_join_server">Join Standalone Server</button>
+     <!--<button onclick="options()">Options</button>-->
+     <button onclick="exit()">Exit Game</button>
+</body>
+</html>
